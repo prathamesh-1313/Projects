@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{StoreOwner/base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+	
+	
+	<section>
+	<div class="home-info"> 
+        <div class="info-detail">
+         <div class="name-info">
+          <p class="pe-2">Hiii</p>
+          <h3 th:text="${user.uname}"></h3>
+          </div>
+          <p>Welcome To</p>
+          <h3>Store Management System</h3>
+          <p>"Create Account & Open Stores"</p>
+          <a th:href="@{/store-owner/addstore}" class="btn btn-outline-warning contact-btn mt-2">
+            Add Stores
+          </a>
+        </div>
+         <div class="image"></div>
+      </div>
+	
+	</section>
+</body>
+</html>

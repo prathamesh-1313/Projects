@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+	
+	
+	<section>
+	<div class="home-info"> 
+        <div class="info-detail">
+          <p>Welcome To</p>
+          <h3>Store Management System</h3>
+          <p>"Create Account & Open Stores"</p>
+         <a href="" th:href="@{/signup}" class="btn btn-outline-warning contact-btn mt-2">
+            Create Account
+          </a> 
+        </div>
+         <div class="image"></div>
+      </div>
+	
+	</section>
+</body>
+</html>

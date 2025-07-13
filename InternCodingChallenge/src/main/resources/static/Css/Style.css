@@ -1,0 +1,138 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #2f2f2f;
+	font-family: "Poppins", sans-serif;
+}
+
+header {
+	height: 60px;
+	width: 100vw;
+	background: #444;
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0px;
+}
+
+.head-name {
+	margin-left: 30px;
+}
+
+header h3 {
+	color: gold;
+	font-size: 25px;
+	font-family: "poppins";
+	font-weight: 700;
+	margin: 0px;
+}
+
+header nav {
+	margin: auto;
+	display: flex;
+	justify-content: space-evenly;
+	width: 700px;
+	align-items: center;
+}
+
+header nav a {
+	text-decoration: none;
+	font-size: 17px;
+	color: rgba(255, 255, 255, 0.7);
+	font-family: "poppins";
+	font-weight: 500;
+	display: block;
+	padding: 15px 0px;
+	border-bottom: 4px solid #444;
+	text-transform:capitalize;
+}
+
+header nav a:hover {
+	color: white;
+	border-bottom: 4px solid gold;
+}
+
+.form-container {
+	max-width: 35%;
+	margin: 36px auto;
+	background: #444;
+	padding:30px;
+	border-radius:5px;
+}
+
+.form-container .heading h3 {
+	color: gold;
+	font-size: 25px;
+	font-family: "poppins";
+	font-weight: 700;
+	margin: 0px;
+}
+
+
+.form-container form label {
+	color: white;
+	font-family: "poppins";
+	font-weight: 500;
+}
+
+.form-container form input {
+	height: 35px;
+	width: 100%;
+	background-color: #484848;
+	color: white;
+	border: 1px solid #c1c1c1;
+	border-radius: 5px;
+	padding-left: 7px;
+	outline:none;
+}
+
+.form-container form textarea{
+	width: 100%;
+	background-color: #484848;
+	color: white;
+	border: 1px solid #c1c1c1;
+	border-radius: 5px;
+	outline:none;
+	padding:2px;
+}
+
+
+.home-info{
+	display:flex;
+	justify-content:space-evenly;
+	align-items:center;
+	height:90vh;
+}
+
+
+
+.info-detail h3{
+  color:gold;
+  font-size: 30px;
+  font-family: "poppins";
+  font-weight: 700;
+  margin: 0px;
+}
+
+.info-detail p{
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0px;
+  line-height: 30px;
+  color: white;
+}
+
+.contact-btn{
+  color:white;
+  font-size: 15px;
+}
+
+.image{
+	height:450px;
+	width:450px;
+	background-image:url("/images/Store2.png");	
+	background-size:cover;
+}

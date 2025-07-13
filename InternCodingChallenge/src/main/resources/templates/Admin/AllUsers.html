@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{Admin/base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>View Users</title>
+</head>
+<body>
+	
+	
+	<section>
+	
+	<div class="users-container">
+	
+	<div class="table-heading text-center m-3">
+	<h3>All Users</h3>
+	</div>
+	
+	<div class="m-3 search-container">
+	<input onKeyUp="searchUser()" type="text" placeholder="Search User.." id="usersearch" />
+	
+	<div class="search-user-data mt-3">
+	
+	</div>
+	</div>
+	
+	<table  border="1px" class="table-data">
+	<tr>
+	<th>Id</th>
+	<th>Name</th>
+	<th>Email</th>
+	<th>Role</th>
+	<th>Action</th>
+	</tr>
+	
+	<tr th:each="user : ${allUsers}">
+	<td th:text="${user.uid}"></td>
+	<td th:text="${user.uname}"></td>
+	<td th:text="${user.uemail}"></td>
+	<td th:text="${user.urole}"></td>
+	<td>
+	<a href="#" th:href="@{'/admin/delUser/' + ${user.uid}}" class="btn btn-danger">Delete</a>
+	</td>
+	</tr>
+	
+	</table>
+	
+	</div>
+	
+	</section>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{User/base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8" />
+<title>Home</title>
+</head>
+<body>
+
+
+	<section>
+          <i onclick="toggleBtn()" class="fa-solid fa-bars bars"></i>
+         <div class="allstores">
+		<div  th:each="store : ${allStores}" class="store-container">
+			<div class="store-name">
+
+				<h2 th:text="${store.name}"></h2>
+			</div>
+
+			<div class="store-info">
+				<div class="mb-3 info">
+					<span>Store Name : </span><a href="" th:text="${store.name}"></a>
+				</div>
+				<div class="mb-3 info">
+					<span>Store Owner Name : </span><a href="" th:text="${store.owner.uname}"></a>
+				</div>
+				<div class="mb-3 info">
+					<span>Email : </span><a href="" th:text="${store.email}"></a>
+				</div>
+          </div>
+        
+	      <div class="mb-3">
+            <form action="#" th:action="@{/user/rating}" method="post" class="rating-container">
+			
+					<div class="select-container">
+						<div class="select">
+							<span>Select Rating</span> <i class="select-arrow">▽</i>
+						</div>
+						<div class="content">
+							<ul class="option">
+								
+							</ul>
+						</div>
+						
+						
+                          <input type="hidden" name="id" th:value="${store.id}" />
+                        
+                        <input type="hidden" name="ratingVal" id="ratingInput" />
+					</div>
+					<div class="m-4 text-center">
+					<button type="submit" class="btn btn-primary">Submit Rating</button>
+					</div>
+					
+					</form>
+					</div>
+				
+
+
+			</div>
+
+		</div>      
+
+	</section>
+	
+	
+	
+</body>
+</html>

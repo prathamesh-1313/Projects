@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{StoreOwner/base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Add Store</title>
+</head>
+<body>
+	
+	
+	<section>
+	
+	<div class="store-container">
+	<div class="store-reg-heading text-center">
+	<h3>Register Store</h3>
+	</div>
+	
+	<div th:if="${storeMsg}" class="storeMsg">
+	<p th:text="${storeMsg.message}"></p>
+	</div>
+	
+	<div class="form-container">
+	
+	<form action="#" th:action="@{/store-owner/addStoreInfo}"  method="post" th:object="${store}" autocomplete="off">
+	<div class="mb-3">
+	<label for="name">Store Name</label>
+	<input type="text" 
+	name="name"
+	th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}" 
+	id="name" />
+	 <div class="invalid-feedback" th:each="err : ${nameErr}" th:text="${err.defaultMessage}"></div>
+	</div>
+	
+	<div class="mb-3">
+	<label for="email">Email</label>
+	<input type="text" 
+	name="email"
+	th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}"  
+	id="email" />
+	<div class="invalid-feedback" th:each="err : ${emailErr}" th:text="${err.defaultMessage}"></div>
+	</div>
+	
+	<div class="mb-3">
+	<label for="address">Address</label>
+	<textarea 
+	name="address" 
+	id="address"
+	th:classappend="${#fields.hasErrors('address') ? 'is-invalid' : ''}"
+	cols="" 
+	rows="3" 
+	></textarea>
+	<div class="invalid-feedback" th:each="err : ${addressErr}" th:text="${err.defaultMessage}"></div>
+	</div>
+	
+	<div class="mb-3 text-center">
+	<button type="submit" class="btn btn-warning">Submit</button>
+	</div>
+	</form>
+	</div>
+	
+	</div>
+	
+	</section>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{StoreOwner/base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>View Stores</title>
+</head>
+<body>
+	
+	
+	<section>
+	
+	<div class="users-container">
+	
+	<div class="table-heading text-center m-3">
+	<h3>Your Stores</h3>
+	</div>
+	
+	<table  border="1px" class="table-data">
+	<tr>
+	<th>Id</th>
+	<th>Name</th>
+	<th>Owner Name</th>
+	<th>Email</th>
+	<th>Address</th>
+	<th>Action</th>
+	</tr>
+	
+	<tr th:each="store : ${stores}">
+	<td th:text="${store.id}"></td>
+	<td th:text="${store.name}"></td>
+	<td th:text="${store.owner.uname}"></td>
+	<td th:text="${store.email}"></td>
+	<td th:text="${store.address}"></td>
+	<td>
+	<a href="#" class="btn btn-danger">Delete</a>
+	</td>
+	</tr>
+	
+	</table>
+	
+	</div>
+	
+	</section>
+</body>
+</html>

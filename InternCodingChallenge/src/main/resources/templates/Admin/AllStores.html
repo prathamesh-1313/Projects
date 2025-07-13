@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{Admin/base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>View Stores</title>
+</head>
+<body>
+	
+	
+	<section>
+	
+	<div class="users-container">
+	
+	<div class="table-heading text-center m-3">
+	<h3>All Stores</h3>
+	</div>
+	
+	<div class="m-3 search-container">
+	<input onKeyUp="searchStore()" type="text" placeholder="Search Stores.." id="storesearch" />
+	
+	<div class="search-store-data mt-3">
+	
+	</div>
+	</div>
+	
+	<table  border="1px" class="table-data">
+	<tr>
+	<th>Id</th>
+	<th>Name</th>
+	<th>Owner Name</th>
+	<th>Email</th>
+	<th>Address</th>
+	<th>Action</th>
+	</tr>
+	
+	<tr th:each="store : ${allStores}">
+	<td th:text="${store.id}"></td>
+	<td th:text="${store.name}"></td>
+	<td th:text="${store.owner.uname}"></td>
+	<td th:text="${store.email}"></td>
+	<td th:text="${store.address}"></td>
+	<td>
+	<a href="#" th:href="@{'/admin/delStore/' + ${store.id}}" class="btn btn-danger">Delete</a>
+	</td>
+	</tr>
+	
+	</table>
+	
+	</div>
+	
+	</section>
+</body>
+</html>
